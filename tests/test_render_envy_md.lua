@@ -13,17 +13,17 @@ local T = MiniTest.new_set({
 T["setup()"] = MiniTest.new_set()
 
 T["setup()"]["uses default config"] = function()
-  child.lua([[require("plugin_name").setup()]])
-  eq(child.lua_get([[require("plugin_name").config.greeting]]), "Hello from plugin_name")
+  child.lua([[require("render-envy-md").setup()]])
+  eq(child.lua_get([[require("render-envy-md").config.greeting]]), "Hello from render-envy-md")
 end
 
 T["setup()"]["merges user config"] = function()
-  child.lua([[require("plugin_name").setup({ greeting = "Hi" })]])
-  eq(child.lua_get([[require("plugin_name").config.greeting]]), "Hi")
+  child.lua([[require("render-envy-md").setup({ greeting = "Hi" })]])
+  eq(child.lua_get([[require("render-envy-md").config.greeting]]), "Hi")
 end
 
 T["registers user command"] = function()
-  eq(child.fn.exists(":PluginName"), 2)
+  eq(child.fn.exists(":RenderEnvy"), 2)
 end
 
 return T

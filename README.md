@@ -1,6 +1,6 @@
-# plugin_name
+# render-envy-md
 
-A Neovim plugin
+Another Neovim plugin for rendering markdown. This is highly _opinionated_, focussing on reducing **layout shift**. Much of the code is ported from [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim).
 
 ## Free Software
 

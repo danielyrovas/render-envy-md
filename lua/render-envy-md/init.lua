@@ -1,14 +1,14 @@
----@class plugin_name.Config
+---@class render.envy.Config
 ---@field greeting? string
 
 local M = {}
 
----@type plugin_name.Config
+---@type render.envy.Config
 M.config = {
-  greeting = "Hello from plugin_name",
+  greeting = "Hello from render-envy-md",
 }
 
----@param opts? plugin_name.Config
+---@param opts? render.envy.Config
 function M.setup(opts)
   M.config = vim.tbl_deep_extend("force", M.config, opts or {})
 end
