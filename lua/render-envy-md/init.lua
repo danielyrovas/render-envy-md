@@ -23,6 +23,7 @@ local M = {}
 ---@field link render.envy.link.Config
 ---@field quote render.envy.quote.Config
 ---@field strikethrough render.envy.strikethrough.Config
+---@field tag render.envy.tag.Config
 
 ---@class (exact) render.envy.state.Config
 ---@field file_types string[]
@@ -83,6 +84,7 @@ M.default = {
   link = settings.link.default,
   quote = settings.quote.default,
   strikethrough = settings.strikethrough.default,
+  tag = settings.tag.default,
 }
 
 ---@param opts? render.envy.UserConfig

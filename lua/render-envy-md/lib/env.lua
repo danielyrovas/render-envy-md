@@ -185,6 +185,14 @@ function M.win.buf(win)
 end
 
 ---@param win integer
+---@param name string
+---@return any
+---@overload fun(win: integer, name: 'conceallevel'): integer
+function M.win.get(win, name)
+  return vim.api.nvim_get_option_value(name, { scope = "local", win = win })
+end
+
+---@param win integer
 ---@return vim.fn.winsaveview.ret
 function M.win.view(win)
   return vim.api.nvim_win_call(win, vim.fn.winsaveview)

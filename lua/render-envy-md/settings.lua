@@ -385,4 +385,17 @@ M.strikethrough.default = {
   delimiters = "hide",
 }
 
+---@class render.envy.tag.Settings
+M.tag = {}
+
+---@class (exact) render.envy.tag.Config: render.envy.base.Config
+
+-- not in upstream
+---@type render.envy.tag.Config
+M.tag.default = {
+  -- Turn on / off tag rendering, i.e. #idea. Only highlighted, the text does
+  -- not change.
+  enabled = true,
+}
+
 return M

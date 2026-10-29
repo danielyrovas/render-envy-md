@@ -33,6 +33,7 @@ M.colors = {
   Quote6 = "RenderEnvyQuote",
   Sign = "SignColumn",
   Success = "DiagnosticOk",
+  Tag = "Identifier",
   Info = "DiagnosticInfo",
   Hint = "DiagnosticHint",
   Warn = "DiagnosticWarn",

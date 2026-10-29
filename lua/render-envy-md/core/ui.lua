@@ -144,8 +144,9 @@ function Updater:display()
   local cursor = row and { row, row } or nil
   local col = env.row.col(self.buf, self.win)
   local cell = row and col and { row, col } or nil
+  local conceal = env.win.get(self.win, "conceallevel") > 0
   self.decorator:display(M.ns, function(extmark)
-    return self:hide(extmark, range, cursor, cell, reveal)
+    return self:hide(extmark, range, cursor, cell, reveal, conceal)
   end)
 end
 
@@ -191,8 +192,14 @@ end
 ---@param cursor? render.envy.Range
 ---@param cell? { [1]: integer, [2]: integer }
 ---@param reveal boolean
+---@param conceal boolean
 ---@return boolean
-function Updater:hide(extmark, range, cursor, cell, reveal)
+function Updater:hide(extmark, range, cursor, cell, reveal, conceal)
+  -- not in upstream: an overlay on text concealed by treesitter is drawn over
+  -- the next visible text -> hide every overlay when conceal is on
+  if conceal and extmark:get().opts.virt_text_pos == "overlay" then
+    return true
+  end
   -- not in upstream: replaces a cursor line highlight -> hide on cursor row
   if extmark:get().conceal == "cursor" then
     return extmark:overlaps(cursor)

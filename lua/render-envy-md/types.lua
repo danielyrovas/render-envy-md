@@ -32,6 +32,7 @@
 ---@field link? render.envy.link.UserConfig
 ---@field quote? render.envy.quote.UserConfig
 ---@field strikethrough? render.envy.strikethrough.UserConfig
+---@field tag? render.envy.tag.UserConfig
 
 ---@class (exact) render.envy.base.UserConfig
 ---@field enabled? boolean
@@ -101,3 +102,5 @@
 
 ---@class (exact) render.envy.strikethrough.UserConfig: render.envy.base.UserConfig
 ---@field delimiters? render.envy.Delimiters
+
+---@class (exact) render.envy.tag.UserConfig: render.envy.base.UserConfig

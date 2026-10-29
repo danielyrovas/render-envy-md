@@ -198,6 +198,11 @@ Calling `setup` is only needed if you want to change the defaults
     enabled = true,
     delimiters = "hide",
   },
+
+  tag = {
+    -- #idea
+    enabled = true,
+  },
 }
 ```
 

@@ -22,6 +22,9 @@ function M.parse(ctx)
 
     (strikethrough) @strikethrough
 
+    ((inline) @tag
+      (#lua-match? @tag "#"))
+
     [
       (inline_link)
       (uri_autolink)
@@ -34,6 +37,7 @@ function M.parse(ctx)
     link = require("render-envy-md.render.inline.link"),
     shortcut = require("render-envy-md.render.inline.shortcut"),
     strikethrough = require("render-envy-md.render.inline.strikethrough"),
+    tag = require("render-envy-md.render.inline.tag"),
   }
   local context = Context.get(ctx.buf)
   local marks = Marks.new()

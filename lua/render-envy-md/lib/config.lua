@@ -30,6 +30,7 @@ function Config.new(root, enabled, buf)
     link = root.link,
     quote = root.quote,
     strikethrough = root.strikethrough,
+    tag = root.tag,
   }
   config = vim.deepcopy(config)
 
